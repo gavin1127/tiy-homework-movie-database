@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="movies@localhost">
+  <database-model serializer="dbm" rdbms="POSTGRES" format-version="4.0">
+    <root id="1"/>
+    <database id="2" parent="1" name="movies">
+      <ObjectId>16562</ObjectId>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </database>
+    <schema id="3" parent="2" name="public">
+      <ObjectId>2200</ObjectId>
+      <IntrospectionTimestamp>2017-03-31.09:50:41.934</IntrospectionTimestamp>
+      <IntrospectionStateNumber>1066</IntrospectionStateNumber>
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="4" parent="2" name="pg_catalog">
+      <ObjectId>11</ObjectId>
+    </schema>
+    <schema id="5" parent="2" name="pg_toast">
+      <ObjectId>99</ObjectId>
+    </schema>
+    <schema id="6" parent="2" name="pg_temp_1">
+      <ObjectId>11848</ObjectId>
+    </schema>
+    <schema id="7" parent="2" name="pg_toast_temp_1">
+      <ObjectId>11849</ObjectId>
+    </schema>
+    <schema id="8" parent="2" name="information_schema">
+      <ObjectId>12381</ObjectId>
+    </schema>
+    <sequence id="9" parent="3" name="genre_genre_id_seq">
+      <ObjectId>16620</ObjectId>
+      <StateNumber>1051</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <sequence id="10" parent="3" name="movie_genre_movie_genre_id_seq">
+      <ObjectId>16638</ObjectId>
+      <StateNumber>1061</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <sequence id="11" parent="3" name="movie_movie_id_seq">
+      <ObjectId>16602</ObjectId>
+      <StateNumber>1046</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <sequence id="12" parent="3" name="movie_person_movie_person_id_seq">
+      <ObjectId>16658</ObjectId>
+      <StateNumber>1065</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <sequence id="13" parent="3" name="person_person_id_seq">
+      <ObjectId>16611</ObjectId>
+      <StateNumber>1049</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <sequence id="14" parent="3" name="reviews_review_id_seq">
+      <ObjectId>16629</ObjectId>
+      <StateNumber>1053</StateNumber>
+      <SequenceIdentity>1</SequenceIdentity>
+    </sequence>
+    <table id="15" parent="3" name="genre">
+      <ObjectId>16622</ObjectId>
+      <StateNumber>1064</StateNumber>
+    </table>
+    <table id="16" parent="3" name="movie">
+      <ObjectId>16604</ObjectId>
+      <StateNumber>1065</StateNumber>
+    </table>
+    <table id="17" parent="3" name="movie_genre">
+      <ObjectId>16640</ObjectId>
+      <StateNumber>1064</StateNumber>
+    </table>
+    <table id="18" parent="3" name="movie_person">
+      <ObjectId>16660</ObjectId>
+      <StateNumber>1065</StateNumber>
+    </table>
+    <table id="19" parent="3" name="person">
+      <ObjectId>16613</ObjectId>
+      <StateNumber>1065</StateNumber>
+    </table>
+    <table id="20" parent="3" name="reviews">
+      <ObjectId>16631</ObjectId>
+      <StateNumber>1053</StateNumber>
+    </table>
+    <column id="21" parent="15" name="genre_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1051</StateNumber>
+      <DefaultExpression>nextval(&apos;genre_genre_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="22" parent="15" name="genre_type">
+      <Position>2</Position>
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1051</StateNumber>
+    </column>
+    <index id="23" parent="15" name="genre_genre_id_uindex">
+      <ObjectId>16628</ObjectId>
+      <ColNames>genre_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="24" parent="15" name="genre_pkey">
+      <ObjectId>16626</ObjectId>
+      <ColNames>genre_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="25" parent="15" name="genre_pkey">
+      <ObjectId>16627</ObjectId>
+      <ColNames>genre_id</ColNames>
+      <UnderlyingIndexName>genre_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="26" parent="16" name="movie_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1046</StateNumber>
+      <DefaultExpression>nextval(&apos;movie_movie_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="27" parent="16" name="movie_title">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1048</StateNumber>
+    </column>
+    <index id="28" parent="16" name="movie_movie_id_uindex">
+      <ObjectId>16610</ObjectId>
+      <ColNames>movie_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="29" parent="16" name="movie_pkey">
+      <ObjectId>16608</ObjectId>
+      <ColNames>movie_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="30" parent="16" name="movie_pkey">
+      <ObjectId>16609</ObjectId>
+      <ColNames>movie_id</ColNames>
+      <UnderlyingIndexName>movie_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="31" parent="17" name="movie_genre_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1061</StateNumber>
+      <DefaultExpression>nextval(&apos;movie_genre_movie_genre_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <index id="32" parent="17" name="movie_genre_movie_genre_id_uindex">
+      <ObjectId>16651</ObjectId>
+      <ColNames>movie_genre_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="33" parent="17" name="movie_genre_pkey">
+      <ObjectId>16644</ObjectId>
+      <ColNames>movie_genre_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="34" parent="17" name="movie_genre_pkey">
+      <ObjectId>16645</ObjectId>
+      <ColNames>movie_genre_id</ColNames>
+      <UnderlyingIndexName>movie_genre_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="35" parent="17" name="movie_genre_genre_genre_id_fk">
+      <ObjectId>16653</ObjectId>
+      <ColNames>movie_genre_id</ColNames>
+      <RefTableName>genre</RefTableName>
+      <RefKeyName>genre_pkey</RefKeyName>
+      <RefColNames>genre_id</RefColNames>
+    </foreign-key>
+    <foreign-key id="36" parent="17" name="movie_genre_movie_movie_id_fk">
+      <ObjectId>16646</ObjectId>
+      <ColNames>movie_genre_id</ColNames>
+      <RefTableName>movie</RefTableName>
+      <RefKeyName>movie_pkey</RefKeyName>
+      <RefColNames>movie_id</RefColNames>
+    </foreign-key>
+    <column id="37" parent="18" name="movie_person_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1065</StateNumber>
+      <DefaultExpression>nextval(&apos;movie_person_movie_person_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <index id="38" parent="18" name="movie_person_movie_person_id_uindex">
+      <ObjectId>16676</ObjectId>
+      <ColNames>movie_person_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="39" parent="18" name="movie_person_pkey">
+      <ObjectId>16664</ObjectId>
+      <ColNames>movie_person_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="40" parent="18" name="movie_person_pkey">
+      <ObjectId>16665</ObjectId>
+      <ColNames>movie_person_id</ColNames>
+      <UnderlyingIndexName>movie_person_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="41" parent="18" name="movie_person_movie_movie_id_fk">
+      <ObjectId>16671</ObjectId>
+      <ColNames>movie_person_id</ColNames>
+      <RefTableName>movie</RefTableName>
+      <RefKeyName>movie_pkey</RefKeyName>
+      <RefColNames>movie_id</RefColNames>
+    </foreign-key>
+    <foreign-key id="42" parent="18" name="movie_person_person_person_id_fk">
+      <ObjectId>16666</ObjectId>
+      <ColNames>movie_person_id</ColNames>
+      <RefTableName>person</RefTableName>
+      <RefKeyName>person_pkey</RefKeyName>
+      <RefColNames>person_id</RefColNames>
+    </foreign-key>
+    <column id="43" parent="19" name="person_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1049</StateNumber>
+      <DefaultExpression>nextval(&apos;person_person_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="44" parent="19" name="first_name">
+      <Position>2</Position>
+      <DataType>varchar(50)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1049</StateNumber>
+    </column>
+    <column id="45" parent="19" name="last_name">
+      <Position>3</Position>
+      <DataType>varchar(40)|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1049</StateNumber>
+    </column>
+    <index id="46" parent="19" name="person_person_id_uindex">
+      <ObjectId>16619</ObjectId>
+      <ColNames>person_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="47" parent="19" name="person_pkey">
+      <ObjectId>16617</ObjectId>
+      <ColNames>person_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="48" parent="19" name="person_pkey">
+      <ObjectId>16618</ObjectId>
+      <ColNames>person_id</ColNames>
+      <UnderlyingIndexName>person_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="49" parent="20" name="review_id">
+      <Position>1</Position>
+      <DataType>integer|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1053</StateNumber>
+      <DefaultExpression>nextval(&apos;reviews_review_id_seq&apos;::regclass)</DefaultExpression>
+    </column>
+    <column id="50" parent="20" name="review_average ">
+      <Position>2</Position>
+      <DataType>double precision|0</DataType>
+      <NotNull>1</NotNull>
+      <StateNumber>1053</StateNumber>
+    </column>
+    <index id="51" parent="20" name="reviews_pkey">
+      <ObjectId>16635</ObjectId>
+      <ColNames>review_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <index id="52" parent="20" name="reviews_review_id_uindex">
+      <ObjectId>16637</ObjectId>
+      <ColNames>review_id</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="53" parent="20" name="reviews_pkey">
+      <ObjectId>16636</ObjectId>
+      <ColNames>review_id</ColNames>
+      <UnderlyingIndexName>reviews_pkey</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+  </database-model>
+</dataSource>
